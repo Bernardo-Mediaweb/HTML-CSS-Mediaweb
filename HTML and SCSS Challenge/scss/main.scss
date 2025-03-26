@@ -60,8 +60,8 @@ body {
         }
         
         .bottom {
+            margin-bottom: 0px;
             margin-top: auto;
-            margin-bottom: 0px
         }
     
         .menu-items {
@@ -101,8 +101,8 @@ body {
 
         .top {
             .logo-icon {
-                margin-right: 22px;
                 margin-left: -25px;
+                margin-right: 22px;
             
             }
 
@@ -181,7 +181,6 @@ body {
     }
 }
 
-
 // Overlay after opening the sidebar
 .overlay {
     background-color: rgba(0, 0, 0, 0.5); // Semi-transparent black
@@ -199,28 +198,6 @@ body {
         opacity: 1;
         pointer-events: auto;
     }
-}
-
-// Adjust content margin when sidebar is expanded
-.content {
-    transition: margin-left 0.3s ease;
-
-    &.sidebar-expanded {
-        margin-left: 250px;
-    }
-}
-
-.content {
-    margin-left: 95px; /* Adjust this value to match the width of the sidebar */
-    margin-right: 330px; /* Adjust this value to match the width of the right sidebar */
-    padding: 20px;
-    width: calc(100% - 95px - 360px); /* Adjust this value to match the width of the sidebars */
-
-}
-
-.content.expanded {
-    margin-right: 0;
-    width: calc(100% - 112px); /* Adjust this value to match the width of the sidebar */
 }
 
 .header {
@@ -244,15 +221,6 @@ body {
             @include button-styles($secondary-color, white);
         }
     }
-}
-
-.search-bar {
-    align-items: center;
-    background-color: #f1f1f1;
-    border-radius: 10px;
-    display: flex;
-    margin-top: 20px;
-    padding: 10px;
 }
 
 .search-bar {
@@ -558,52 +526,78 @@ body {
 }
 
 /* Sidebar toggle button */
-.sidebar-toggle-btn {
-    align-items: center;
-    background-color: #fff;
-    border: none;
-    border-radius: 15px 0 0 15px; // Rounded on the left side
-    color: #fff;
-    cursor: pointer;
-    /*display: none !important;*/
-    display: flex;
-    height: 92px;
-    justify-content: center;
-    padding: 0;
-    position: fixed;
-    right: 340px;
-    top: 10px; // Adjust the top position as needed
-    width: 55px;
-    z-index: 999; // Ensure the button is on top of other elements
-
-
-    .arrow-icon {
-        height: 27px;
-        width: 40px;
-    }
-}
-
 .right-sidebar {
     background-color: $quaternary-color;
     box-sizing: border-box;
     height: 100%;
     overflow: auto;
-    padding: 20px; /* Adjust padding to fit content */
+    padding: 20px;
     position: fixed;
     right: 0;
     top: 0;
-    transition: transform 0.3s ease;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    width: 340px;
     z-index: 999;
-    
+
+    &.expanded {
+        transform: translateX(0);
+    }
+
     &::-webkit-scrollbar {
-        background: transparent; // Make scrollbar track transparent
-        width: 0; // Remove scrollbar width
+        background: transparent;
+        width: 0;
     }
 
     & > *:nth-child(-n+6) {
         margin-bottom: 40px;
     }
+}
 
+.sidebar-toggle-btn {
+    align-items: center;
+    background-color: #fff;
+    border: none;
+    border-radius: 15px 0 0 15px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    height: 92px;
+    justify-content: center;
+    padding: 0;
+    position: fixed;
+    right: 0;
+    top: 70px;
+    width: 55px;
+    z-index: 999;
+    transition: right 0.3s ease-in-out; // Move button smoothly
+
+    .arrow-icon {
+        height: 27px;
+        width: 40px;
+        transition: transform 0.3s ease-in-out 0.2s; // Add a slight delay for smooth effect
+    }
+
+    &.moved {
+        right: 340px; // Moves left when sidebar is expanded
+    }
+
+    .arrow-icon.rotated {
+        transform: rotate(180deg);
+    }
+}
+
+
+// Adjust content margin when sidebar is expanded
+.content {
+    margin-left: 95px;
+    padding: 20px;
+    transition: margin-right 0.3s ease;
+    width: 100%;
+
+    &.shifted {
+        margin-right: 360px; // Adjusts content when sidebar is open
+    }
 }
 
 .profile {
