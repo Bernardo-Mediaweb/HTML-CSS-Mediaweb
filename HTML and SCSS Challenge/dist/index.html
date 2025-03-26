@@ -8,7 +8,6 @@
 </head>
 <body>
     <div class="overlay"></div>
-
     <div class="container">
         <!-- Nav sidebar -->
         <nav class="nav-sidebar">
@@ -44,7 +43,7 @@
         </nav>
         <!-- Right sidebar-->        
          <button class="sidebar-toggle-btn">
-            <img src="/HTML and SCSS Challenge/src/img/icons/chevron-right.svg" class="arrow-icon" alt="Toggle Sidebar">
+            <img src="/HTML and SCSS Challenge/src/img/icons/chevron-left.svg" class="arrow-icon" alt="Toggle Sidebar">
         </button>
         <div class="right-sidebar" id="rightSidebar">
                 <div class="profile">
@@ -183,7 +182,7 @@
                                 <img src="/HTML and SCSS Challenge/src/img/icons/angle-down.svg" class="dropdown-icon" alt="Dropdown Icon">
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="bg-color">
                             <td>
                                 <div class="name-container">
                                     <img src="/HTML and SCSS Challenge/src/img/avatar_4.png" class="profile-pic" alt="User">
@@ -196,25 +195,27 @@
                                 <span class="status active">Active</span>
                             </td>
                             <td>
-                                <img src="/HTML and SCSS Challenge/src/img/icons/angle-down.svg" class="dropdown-icon" alt="Dropdown Icon">
+                                <img src="/HTML and SCSS Challenge/src/img/icons/angle-up.svg" class="dropdown-icon" alt="Dropdown Icon">
                             </td>                         
                         </tr>
-                        <div><tr class="accordion-content">
+                        <div>
+                            <tr class="accordion-content">
                             <td colspan="5">
                                 <div class="accordion-details">
                                     <div>
                                         <span>Personal Detail</span>
-                                        <p>736-030-6955</p>
-                                        <p>maximilian.rogahn@stehr.org</p>
+                                        <p><img src="/HTML and SCSS Challenge/src/img/icons/phone.svg" alt="Phone Icon">736-030-6955</p>
+                                        <p><img src="/HTML and SCSS Challenge/src/img/icons/envelope.svg" alt="Envelope Icon">maximilian.rogahn@stehr.org</p>
                                     </div>
                                     <div>
                                         <span>Bio</span>
                                         <p>A good listener, always looking to respond to the...</p>
                                     <p>Experience in handling returns and complaints. Headed revisions of customer satisfaction processes.</p></div>
                                     
-                            </div>
+                                </div>
                             </td>
-                        </tr> </div>
+                            </tr> 
+                        </div>
                         <tr>
                             <td>
                                 <div class="name-container">
@@ -256,11 +257,14 @@
                         1 to 4 of 65 records
                     </div>
                     <div class="pagination-controls">
+                        <span><img src="/HTML and SCSS Challenge/src/img/icons/left-arrow.svg" alt="" srcset=""></span>
                         <button class="pagination-button">1</button>
-                        <button class="pagination-button">2</button>
-                        <button class="pagination-button">3</button>
+                        <button class="no-pagination-button">2</button>
+                        <button class="no-pagination-button">3</button>
+                        <button class="no-pagination-button">4</button>
+                        <button class="no-pagination-button">5</button>
                         <span>...</span>
-                        <button class="pagination-button">10</button>
+                        <span><img src="/HTML and SCSS Challenge/src/img/icons/right-arrow.svg" alt="" srcset=""></span>
                     </div>
             </div> 
         </div>
@@ -283,7 +287,7 @@
     const rightSidebar = document.getElementById("rightSidebar");
     const sidebarToggleBtn = document.querySelector(".sidebar-toggle-btn");
     const arrowIcon = sidebarToggleBtn.querySelector(".arrow-icon");
-    const content = document.querySelector(".content");
+    const content = document.querySelector(".container");
 
     sidebarToggleBtn.addEventListener("click", () => {
         rightSidebar.classList.toggle("expanded");

@@ -19,18 +19,27 @@ h3 {
   padding: 0;
 }
 
+.bg-color {
+  background-color: #e9ecef !important;
+}
+
 body {
-  background-color: #F4FAFF;
   display: flex;
   font-family: "Raleway", sans-serif;
   font-size: 14px;
   margin: 0;
-  padding: 30px;
 }
 
 .container {
   display: flex;
   width: 100%;
+  padding: 30px;
+  border-radius: 51px;
+  background-color: #F4FAFF;
+  transition: margin-right 0.3s ease;
+}
+.container.shifted {
+  margin-right: 360px;
 }
 
 .nav-sidebar {
@@ -268,7 +277,7 @@ body {
   border: none;
   border-bottom: 1px solid #D4E3F0;
   margin: -10px 0 0 25px;
-  width: 50%;
+  width: 45%;
 }
 
 .menu {
@@ -336,6 +345,10 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
   position: relative;
+  z-index: 1;
+}
+.employees-table tbody tr:nth-last-child(-n+2) {
+  bottom: 20px;
 }
 .employees-table tbody tr:hover {
   background-color: rgb(233, 236, 239);
@@ -357,7 +370,7 @@ body {
   /*display: none;*/
   position: relative;
   top: -20px; /* Pull it up to hide the gap */
-  z-index: -1;
+  z-index: 0;
 }
 .employees-table tbody .accordion-content td {
   border-radius: 0 0 15px 15px !important;
@@ -365,13 +378,20 @@ body {
 }
 .employees-table tbody .accordion-details {
   display: flex;
-  gap: 280px;
+  gap: 10px;
   justify-content: space-between;
   margin-top: 10px;
-  padding: 15px;
+  padding: 15px 15px 0;
+}
+.employees-table tbody .accordion-details div:first-of-type {
+  width: 50%;
 }
 .employees-table tbody .accordion-details div:first-of-type > p:nth-of-type(-n+2) {
   color: #009DDE;
+}
+.employees-table tbody .accordion-details img {
+  margin-right: 10px;
+  vertical-align: middle;
 }
 .employees-table tbody tr.active td:first-child {
   border-bottom-left-radius: 0 !important;
@@ -437,18 +457,29 @@ body {
 .pagination-controls {
   align-items: center;
   display: flex;
-  gap: 5px;
+  gap: 15px;
 }
 .pagination-controls .pagination-button {
+  font-family: "Raleway", sans-serif;
+  color: #666;
   background-color: #ffffff;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
   padding: 5px 10px;
   transition: background-color 0.3s;
+  border: 1px solid #7030A0;
 }
 .pagination-controls .pagination-button:hover {
   background-color: #ddd;
+}
+.pagination-controls .no-pagination-button {
+  font-family: "Raleway", sans-serif;
+  color: #666;
+  background-color: #f4faff;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
 }
 
 /* Name & Profile image alignment */
@@ -546,13 +577,9 @@ body {
 }
 
 .content {
-  margin-left: 95px;
-  padding: 20px;
-  transition: margin-right 0.3s ease;
-  width: 100%;
-}
-.content.shifted {
-  margin-right: 360px;
+  margin: auto;
+  width: 90%;
+  margin-left: 115px;
 }
 
 .profile {
