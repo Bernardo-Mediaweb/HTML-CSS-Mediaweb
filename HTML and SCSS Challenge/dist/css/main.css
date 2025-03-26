@@ -748,4 +748,65 @@ body {
   height: 1px;
   margin: 8px 0 14px;
   width: 75%;
+}
+
+.search-button {
+  position: relative;
+}
+.search-button .advanced-filters-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 234px;
+  height: 272px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  padding: 20px;
+  display: none;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.search-button .advanced-filters-dropdown.active {
+  display: block;
+}
+
+.filters-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.filters-container .filter-row {
+  display: flex;
+  flex-direction: column;
+}
+.filters-container .filter-row label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.filters-container .filter-row input {
+  padding: 8px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+}
+.filters-container .filter-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.filters-container .filter-actions button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.filters-container .filter-actions button.default-btn {
+  background-color: #f0f0f0;
+  color: #333;
+}
+.filters-container .filter-actions button.apply-btn {
+  background-color: #007bff;
+  color: white;
 }/*# sourceMappingURL=main.css.map */

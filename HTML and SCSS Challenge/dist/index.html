@@ -119,6 +119,23 @@
                 <input type="text" placeholder="Search for athlete profile data, workout and meditation sessions">
                 <div class="search-button">
                     <button class="advanced-filters">Advanced Filters</button>
+                    
+                    <div class="advanced-filters-dropdown">
+                        <div class="filters-container">
+                            <div class="filter-row">
+                                <label>Start</label>
+                                <input type="text" placeholder="Start date">
+                            </div>
+                            <div class="filter-row">
+                                <label>End</label>
+                                <input type="text" placeholder="End date">
+                            </div>
+                            <div class="filter-actions">
+                                <button class="default-btn">Default</button>
+                                <button class="apply-btn">Apply</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <hr class="search-hr">
@@ -271,30 +288,6 @@
         </div>
          
     </div>
-
-    <script>
-    // Left Sidebar
-    const sidebar = document.querySelector('.nav-sidebar');
-    const sidebarToggle = sidebar.querySelector('.arrow-icon');
-    const overlay = document.querySelector('.overlay');
-
-    sidebarToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('expanded');
-        overlay.classList.toggle('active');
-    });
-
-    // Right Sidebar
-    const rightSidebar = document.getElementById("rightSidebar");
-    const sidebarToggleBtn = document.querySelector(".sidebar-toggle-btn");
-    const arrowIcon = sidebarToggleBtn.querySelector(".arrow-icon");
-    const content = document.querySelector(".container");
-
-    sidebarToggleBtn.addEventListener("click", () => {
-        rightSidebar.classList.toggle("expanded");
-        sidebarToggleBtn.classList.toggle("moved");
-        arrowIcon.classList.toggle("rotated");
-        content.classList.toggle("shifted");
-    });
-     </script>
+    <script src="/HTML and SCSS Challenge/dist/js/main.js"></script>
 </body>
 </html>

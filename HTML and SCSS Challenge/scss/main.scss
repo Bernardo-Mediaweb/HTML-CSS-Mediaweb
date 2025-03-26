@@ -828,3 +828,76 @@ body {
       }
 
   }
+  
+
+  .search-button {
+    position: relative;
+
+    .advanced-filters-dropdown {
+        position: absolute;
+        top: 100%; // Position right below the button
+        right: 0;
+        width: 234px;
+        height: 272px;
+        background-color: white;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 100; // High z-index to ensure it's above other elements
+        padding: 20px;
+        display: none; // Hidden by default
+
+        // Prevent layout shifts
+        overflow: hidden;
+        box-sizing: border-box;
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
+
+.filters-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .filter-row {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        input {
+            padding: 8px;
+            border: 1px solid #d0d0d0;
+            border-radius: 4px;
+        }
+    }
+
+    .filter-actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+
+        button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &.default-btn {
+                background-color: #f0f0f0;
+                color: #333;
+            }
+
+            &.apply-btn {
+                background-color: #007bff;
+                color: white;
+            }
+        }
+    } }
