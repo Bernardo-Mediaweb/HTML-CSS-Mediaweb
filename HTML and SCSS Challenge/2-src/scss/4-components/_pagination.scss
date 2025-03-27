@@ -1,0 +1,46 @@
+@import url(/2-src/scss/1-base/_base-structure.scss);
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
+
+.pagination-container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 10px 0;
+}
+
+.pagination-info {
+    color: #666;
+    font-size: 14px;
+}
+
+.pagination-controls {
+    align-items: center;
+    display: flex;
+    gap: 15px;
+
+    .pagination-button {
+        background-color: #ffffff;
+        border: none;
+        border: 1px solid var(--secondary-color);
+        border-radius: 15px;
+        color: #666;
+        cursor: pointer;
+        font-family: 'Raleway', sans-serif;
+        padding: 5px 10px;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: #ddd;
+        }
+    }
+
+    .no-pagination-button {
+        background-color: #f4faff;
+        border: none;
+        color: #666;
+        cursor: pointer;
+        font-family: 'Raleway', sans-serif;
+        padding: 5px 10px;
+    }
+}

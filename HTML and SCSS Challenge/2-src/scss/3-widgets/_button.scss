@@ -1,0 +1,11 @@
+@mixin button-styles($bg-color: #007bff, $text-color: #ffffff) {
+    background-color: $bg-color;
+    color: $text-color;
+    border: none;
+    border-radius: 80px;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 10px 20px;
+}

@@ -1,0 +1,78 @@
+.search-button {
+    position: relative;
+
+    .advanced-filters-dropdown {
+        background-color: var(--quaternary-color);
+        border-radius: 16px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        display: none;
+        overflow: hidden;
+        padding: 25px;
+        position: absolute;
+        right: -37px;
+        top: 135%;
+        width: 234px;
+        z-index: 2;
+
+        &.active {
+            display: block;
+        }
+
+        .filters-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .filter-row {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    margin-bottom: 15px;
+                }
+
+                .input-wrapper {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+
+                }
+
+                input {
+                    border: 1px solid #d0d0d0;
+                    border-radius: 56px;
+                    padding: 8px;
+                    width: 75%;
+                }
+
+                .input-icon {
+                    position: absolute;
+                    left: 120px;
+                    width: 20px;
+                    height: 20px;
+                    object-fit: contain;
+                }
+            }
+
+            .filter-actions {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 10px;
+
+                button {
+                    @include button-styles (var(--secondary-color, white));
+            
+                    &.secondary-action {
+                        border: solid 1px var(--secondary-color) !important;
+                        @include button-styles (var(--quaternary-color), var(--secondary-color));
+                    }
+            
+                    &.primary-action {
+                        @include button-styles (var(--secondary-color, white));
+                    }
+                }
+            }
+        }
+    }
+}

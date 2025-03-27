@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
+@import url(/2-src/scss/1-base/_base-structure.scss);
+
+/* $2.1 - Body */
+body {
+    display: flex;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* $2.2 - Main container */
+.container {
+    background-color: var(--primary-color);
+    border-radius: 51px;
+    display: flex;
+    padding: 30px;
+    transition: margin-right 0.3s ease;
+    width: 100%;
+
+    &.shifted {
+        margin-right: 360px; //Adjusts content when sidebar is open
+    }
+}
+
+/* $2.3 - Overlay effect */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5); 
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    transition: opacity 0.3s ease;
+    width: 100%;
+    z-index: 1000; 
+
+    &.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+/* $2.4 - Navigation sidebar */
+.nav-sidebar {
+    background-color: var(--secondary-color);
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    left: 0;
+    overflow: hidden;
+    padding: 10px;
+    position: fixed;
+    top: 0; 
+    transition: width 0.3s ease;
+    width: 112px;
+    z-index: 1000;
+    
+    .menu {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        list-style: none;
+        margin: 10px;
+        padding: 0;
+    
+        .top {
+            align-items: center;
+            display: flex;
+            margin-bottom: auto;
+            margin-top: -15px;
+    
+            .logo-icon {
+                margin-right: 30px; 
+            }
+
+            .full-logo {
+                display: none;
+            }
+        }
+        
+        .bottom {
+            margin-bottom: 0px;
+            margin-top: auto;
+        }
+    
+        .menu-items {
+            margin-top: -10rem; 
+    
+            li {
+                margin-bottom: 2rem; 
+            }
+        }
+    
+        li {
+            align-items: center; 
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            margin: 10px 0;
+            padding: 10px; 
+    
+            &.active {
+                background-color: var(--tertiary-color);
+            }
+    
+            &:not(.top):hover {
+                background-color: var(--tertiary-color);
+            }
+        }
+    }
+    
+    &.expanded {
+        width: 222px;
+
+        .menu {
+            align-items: flex-start;
+            margin-left: 25px;
+        }
+
+        .top {
+            .logo-icon {
+                margin-left: -25px;
+                margin-right: 22px;
+            
+            }
+
+            .full-logo {
+                display: block;
+                margin-left: -9px;
+            }        
+            
+            .arrow-icon {
+                margin-left: 40px;
+                transform: rotate(180deg);
+            }
+        }
+
+        .menu-items {
+            li {
+                justify-content: flex-start;
+                
+                .menu-text {
+                    display: inline-block;
+                    margin-left: -5px;
+                    opacity: 1;
+                }
+            }
+
+     
+        }
+    }
+
+    .menu-items {
+        li {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            position: relative;
+
+            .menu-text {
+                color: var(--primary-color);
+                display: none;
+                left: 60px;
+                opacity: 0;
+                position: absolute;
+                transition: opacity 0.3s ease;
+                white-space: nowrap;
+            }
+        }
+    }
+
+        .bottom {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        .menu-text {
+            color: var(--primary-color);
+            display: none;
+            left: 60px;
+            opacity: 0;
+            position: absolute;
+            transition: opacity 0.3s ease;
+            white-space: nowrap;
+        }
+    }
+
+    &.expanded {
+        .bottom {
+            justify-content: flex-start;
+
+            .menu-text {
+                display: inline-block;
+                margin-left: -5px;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+/* $2.4.1 - Menu navigation sidebar */
+.menu {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    list-style: none;
+    margin: 10px;
+    padding: 0;
+
+    .top {
+        align-items: center;
+        display: flex;
+        margin-bottom: auto;
+
+        .logo-icon {
+            margin-right: 30px; 
+        }
+    }
+    
+    .bottom {
+        margin-top: auto;
+    }
+
+    .menu-items {
+        margin-top: -10rem; 
+
+        li {
+            margin-bottom: 2rem; 
+        }
+    }
+
+    li {
+        align-items: center; 
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        margin: 10px 0;
+        padding: 10px; 
+
+        &.active {
+            background-color: var(--tertiary-color);
+        }
+
+
+        &:not(.top):hover { // Only apply hover effect to the bottom menu items
+            background-color: var(--tertiary-color);
+        }
+    }
+    
+}
+
+/* $2.5 - Content */
+.content {
+    margin: auto;
+    margin-left: 115px;
+    width: 90%;
+}
+
+/* $2.6 - Right sidebar */
+.right-sidebar {
+    background-color: var(--quaternary-color);
+    box-sizing: border-box;
+    height: 100%;
+    overflow: auto;
+    padding: 20px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    width: 340px;
+    z-index: 999;
+
+    &.expanded {
+        transform: translateX(0);
+    }
+
+    &::-webkit-scrollbar {
+        background: transparent;
+        width: 0;
+    }
+
+    & > *:nth-child(-n+6) {
+        margin-bottom: 40px;
+    }
+}
+
+/* $2.6.1 - Button from right sidebar */
+.sidebar-toggle-btn {
+    align-items: center;
+    background-color: #fff;
+    border: none;
+    border-radius: 15px 0 0 15px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    height: 92px;
+    justify-content: center;
+    padding: 0;
+    position: fixed;
+    right: 0;
+    top: 70px;
+    transition: right 0.3s ease-in-out; //Move button smoothly
+    width: 55px;
+    z-index: 999;
+
+    .arrow-icon {
+        height: 27px;
+        transition: transform 0.3s ease-in-out 0.2s; //Add a slight delay for smooth effect
+        width: 40px;
+    }
+
+    &.moved {
+        right: 340px; //Moves left when sidebar is expanded
+    }
+
+    .arrow-icon.rotated {
+        transform: rotate(180deg);
+    }
+}
