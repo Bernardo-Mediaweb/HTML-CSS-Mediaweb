@@ -432,31 +432,40 @@ body {
 .name-container {
     align-items: center;
     display: flex;
-    font-weight: 500;
     gap: 10px;
 }
 
 .profile-pic {
     border-radius: 50%;
-    height: 40px;
-    object-fit: cover;
-    width: 40px;
+    height: 35px;
+    width: 35px;
 }
 
-.status {
-    border-radius: 12px;
-    font-size: 14px;
+
+.status { //Status
+    background: #EBF7ED;
+    border-radius: 15px;
+    color: #2A843C;
+    display: inline-block;
+    font-size: 12px;
     padding: 5px 10px;
-}
-
-.dropdown-icon {
-    cursor: pointer;
-    height: 20px;
-    transition: transform 0.3s ease;
-    width: 20px;
+    
 
     &.active {
-        transform: rotate(180deg);
+        background: #2A843C;
+        color: #EBF7ED;
+    }
+}
+
+//Dropdown
+.dropdown-icon {
+    cursor: pointer;
+    height: 10px;
+    margin-left: 10px;
+    width: 10px;
+
+    &:hover {
+        opacity: 0.7;
     }
 }
 
@@ -505,46 +514,6 @@ body {
         cursor: pointer;
         font-family: $font-family;
         padding: 5px 10px;
-    }
-}
-
-.name-container {
-    align-items: center;
-    display: flex;
-    gap: 10px;
-}
-
-.profile-pic {
-    border-radius: 50%;
-    height: 35px;
-    width: 35px;
-}
-
-
-.status { //Status
-    background: #EBF7ED;
-    border-radius: 15px;
-    color: #2A843C;
-    display: inline-block;
-    font-size: 12px;
-    padding: 5px 10px;
-    
-
-    &.active {
-        background: #2A843C;
-        color: #EBF7ED;
-    }
-}
-
-//Dropdown
-.dropdown-icon {
-    cursor: pointer;
-    height: 10px;
-    margin-left: 10px;
-    width: 10px;
-
-    &:hover {
-        opacity: 0.7;
     }
 }
 
@@ -610,7 +579,6 @@ body {
     }
 }
 
-
 //Adjust content margin when sidebar is expanded
 .content {
     margin: auto;
@@ -657,10 +625,10 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 6px 20px; // Adjust padding to control spacing around the text
+        padding: 6px 20px; 
 
         &:not(:last-child) {
-            border-right: 1px solid #A3C9EA; // Add a right border to all except the last item
+            border-right: 1px solid #A3C9EA; 
         }
 
 
@@ -669,9 +637,9 @@ body {
 
             &:nth-child(2) {
                 color:#5FA1DA;
-                font-size: 18px; /* Larger font size */
-                font-weight: 700; /* Bold font weight */
-                margin-top: 4px; /* Add spacing between label and value */
+                font-size: 18px; 
+                font-weight: 700; 
+                margin-top: 4px; 
 
             }
         }
@@ -680,14 +648,14 @@ body {
 
 .card {
     background-color: #4263EB; 
-    background-image: url('/HTML and SCSS Challenge/src/img/medal-card.svg'); // Replace with your image path
-    background-position: right; // Position the image at the bottom right
-    background-repeat: no-repeat; // Prevent the image from repeating
-    background-size: 175px; // Adjust size of the image
+    background-image: url('/HTML and SCSS Challenge/src/img/medal-card.svg'); 
+    background-position: right; 
+    background-repeat: no-repeat; 
+    background-size: 175px; 
     border-radius: 16px;
-    overflow: hidden; // Ensure the arrow stays within the card's rounded corners
-    position: relative; // Required for absolute positioning of the arrow
-    width: 100%; /* Adjust width to fit container */
+    overflow: hidden; 
+    position: relative; 
+    width: 100%; 
   
     .card-content {
       display: flex;
@@ -719,32 +687,32 @@ body {
 
     &::after {
         align-items: center;
-        background-color: $quaternary-color; // Arrow background color (matches card background)
+        background-color: $quaternary-color; 
         border-bottom-right-radius: 15px;
         border-top-left-radius: 15px;
-        bottom: 0px; // Adjust distance from the bottom
-        color: #2E45A4; // Arrow color (matches card background)
-        content: url('/HTML and SCSS Challenge/src/img/icons/chevron-right.svg'); // Arrow symbol
+        bottom: 0px; 
+        color: #2E45A4;
+        content: url('/HTML and SCSS Challenge/src/img/icons/chevron-right.svg'); 
         display: flex;
-        font-size: 0px; // Size of the arrow
-        height: 40px; // Size of the rounded background
+        font-size: 0px; 
+        height: 40px; 
         justify-content: center;
         position: absolute;
-        right: 0px; // Adjust distance from the right
-        width: 47px; // Size of the rounded background
+        right: 0px; 
+        width: 47px; 
       }
   }
 
   .card-2 {
     background-color: $primary-color; 
-    background-image: url('/HTML and SCSS Challenge/src/img/caduceus-card.svg'); // Replace with your image path
-    background-position: right bottom; // Position the image at the bottom right
-    background-repeat: no-repeat; // Prevent the image from repeating
-    background-size: 175px; // Adjust size of the image
+    background-image: url('/HTML and SCSS Challenge/src/img/caduceus-card.svg'); 
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 175px; 
     border-radius: 16px;
-    overflow: hidden; // Ensure the arrow stays within the card's rounded corners
-    position: relative; // Required for absolute positioning of the arrow
-    width: 100%; /* Adjust width to fit container */
+    overflow: hidden; 
+    position: relative; 
+    width: 100%; 
   
     .card-content-2 {
       display: flex;
@@ -779,14 +747,14 @@ body {
 
   .card-3 {
     background-color: $primary-color; 
-    background-image: url('/HTML and SCSS Challenge/src/img/shape-card.svg'); // Replace with your image path
-    background-position: right bottom; // Position the image at the bottom right
-    background-repeat: no-repeat; // Prevent the image from repeating
-    background-size: 175px; // Adjust size of the image
+    background-image: url('/HTML and SCSS Challenge/src/img/shape-card.svg');
+    background-position: right bottom; 
+    background-repeat: no-repeat; 
+    background-size: 175px; 
     border-radius: 16px;
-    overflow: hidden; // Ensure the arrow stays within the card's rounded corners
-    position: relative; // Required for absolute positioning of the arrow
-    width: 100%; /* Adjust width to fit container */
+    overflow: hidden; 
+    position: relative; 
+    width: 100%; 
 
     .card-content-2 {
         display: flex;
