@@ -8,12 +8,12 @@ body {
 }
 
 .container {
-    display: flex;
-    width: 100%;
-    padding: 30px;
-    border-radius: 51px;
     background-color: #F4FAFF;
+    border-radius: 51px;
+    display: flex;
+    padding: 30px;
     transition: margin-right 0.3s ease;
+    width: 100%;
 
     &.shifted {
         margin-right: 360px; // Adjusts content when sidebar is open
@@ -492,15 +492,15 @@ body {
     gap: 15px;
 
     .pagination-button {
-        font-family: $font-family;
-        color: #666;
         background-color: #ffffff;
         border: none;
+        border: 1px solid #{$secondary-color};
         border-radius: 15px;
+        color: #666;
         cursor: pointer;
+        font-family: $font-family;
         padding: 5px 10px;
         transition: background-color 0.3s;
-        border: 1px solid #{$secondary-color};
 
         &:hover {
             background-color: #ddd;
@@ -508,11 +508,11 @@ body {
     }
 
     .no-pagination-button {
-        font-family: $font-family;
-        color: #666;
         background-color: #f4faff;
         border: none;
+        color: #666;
         cursor: pointer;
+        font-family: $font-family;
         padding: 5px 10px;
     }
 }
@@ -601,14 +601,14 @@ body {
     position: fixed;
     right: 0;
     top: 70px;
+    transition: right 0.3s ease-in-out; // Move button smoothly
     width: 55px;
     z-index: 999;
-    transition: right 0.3s ease-in-out; // Move button smoothly
 
     .arrow-icon {
         height: 27px;
-        width: 40px;
         transition: transform 0.3s ease-in-out 0.2s; // Add a slight delay for smooth effect
+        width: 40px;
     }
 
     &.moved {
@@ -624,8 +624,8 @@ body {
 // Adjust content margin when sidebar is expanded
 .content {
     margin: auto;
-    width: 90%;
     margin-left: 115px;
+    width: 90%;
 }
 
 .profile {
@@ -834,70 +834,77 @@ body {
     position: relative;
 
     .advanced-filters-dropdown {
-        position: absolute;
-        top: 100%; // Position right below the button
-        right: 0;
-        width: 234px;
-        height: 272px;
-        background-color: white;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 100; // High z-index to ensure it's above other elements
-        padding: 20px;
-        display: none; // Hidden by default
-
-        // Prevent layout shifts
-        overflow: hidden;
+        background-color: $quaternary-color;
+        border-radius: 16px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         box-sizing: border-box;
+        display: none;
+        overflow: hidden;
+        padding: 25px;
+        position: absolute;
+        right: -37px;
+        top: 135%;
+        width: 234px;
+        z-index: 2;
 
         &.active {
             display: block;
         }
+
+        .filters-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .filter-row {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    margin-bottom: 15px;
+                }
+
+                .input-wrapper {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+
+                }
+
+                input {
+                    border: 1px solid #d0d0d0;
+                    border-radius: 56px;
+                    padding: 8px;
+                    width: 75%;
+                }
+
+                .input-icon {
+                    position: absolute;
+                    left: 120px;
+                    width: 20px;
+                    height: 20px;
+                    object-fit: contain;
+                }
+            }
+
+            .filter-actions {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 10px;
+
+                button {
+                    @include button-styles($secondary-color, white);
+            
+                    &.secondary-action {
+                        border: solid 1px $secondary-color !important;
+                        @include button-styles($quaternary-color, $secondary-color);
+                    }
+            
+                    &.primary-action {
+                        @include button-styles($secondary-color, white);
+                    }
+                }
+            }
+        }
     }
 }
-
-
-.filters-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-
-    .filter-row {
-        display: flex;
-        flex-direction: column;
-
-        label {
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-
-        input {
-            padding: 8px;
-            border: 1px solid #d0d0d0;
-            border-radius: 4px;
-        }
-    }
-
-    .filter-actions {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-
-        button {
-            padding: 8px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-
-            &.default-btn {
-                background-color: #f0f0f0;
-                color: #333;
-            }
-
-            &.apply-btn {
-                background-color: #007bff;
-                color: white;
-            }
-        }
-    } }
