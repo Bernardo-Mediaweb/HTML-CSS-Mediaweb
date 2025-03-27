@@ -7,6 +7,7 @@ body {
     margin: 0;
 }
 
+//Main container
 .container {
     background-color: #F4FAFF;
     border-radius: 51px;
@@ -16,7 +17,7 @@ body {
     width: 100%;
 
     &.shifted {
-        margin-right: 360px; // Adjusts content when sidebar is open
+        margin-right: 360px; //Adjusts content when sidebar is open
     }
 }
 
@@ -61,7 +62,6 @@ body {
 
             .full-logo {
                 display: none;
-                //margin-left: 15px;
             }
         }
         
@@ -187,9 +187,9 @@ body {
     }
 }
 
-// Overlay after opening the sidebar
+//Overlay after opening the nav sidebar
 .overlay {
-    background-color: rgba(0, 0, 0, 0.5); // Semi-transparent black
+    background-color: rgba(0, 0, 0, 0.5); 
     height: 100%;
     left: 0;
     opacity: 0;
@@ -359,7 +359,7 @@ body {
             position: relative;
             z-index: 1;
     
-            // Fix an issue related the two last rows of the table
+            //Fix an issue related the two last rows of the table
             &:nth-last-child(-n+2) {
                 bottom: 20px;
             }
@@ -386,9 +386,8 @@ body {
 
         .accordion-content {
             background-color: #ffffff;
-            /*display: none;*/
             position: relative;
-            top: -20px; /* Pull it up to hide the gap */
+            top: -20px; //Pull it up to hide the gap
             z-index: 0;
 
             td {
@@ -413,7 +412,7 @@ body {
                     
                 img {
                     margin-right: 10px; 
-                    vertical-align: middle; // Aligns the image with the text baseline
+                    vertical-align: middle; //Aligns the image with the text baseline
                 }
                 
             }
@@ -461,16 +460,8 @@ body {
     }
 }
 
-
 .sort-icon {
     margin-left: 5px;
-}
-
-.placeholder-image {
-    background-color: #e0e0e0;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
 }
 
 .pagination-container {
@@ -517,7 +508,6 @@ body {
     }
 }
 
-/* Name & Profile image alignment */
 .name-container {
     align-items: center;
     display: flex;
@@ -530,8 +520,8 @@ body {
     width: 35px;
 }
 
-/* Status badge */
-.status {
+
+.status { //Status
     background: #EBF7ED;
     border-radius: 15px;
     color: #2A843C;
@@ -546,7 +536,7 @@ body {
     }
 }
 
-/* Dropdown icon */
+//Dropdown
 .dropdown-icon {
     cursor: pointer;
     height: 10px;
@@ -558,7 +548,7 @@ body {
     }
 }
 
-/* Sidebar toggle button */
+//Right sidebar
 .right-sidebar {
     background-color: $quaternary-color;
     box-sizing: border-box;
@@ -601,18 +591,18 @@ body {
     position: fixed;
     right: 0;
     top: 70px;
-    transition: right 0.3s ease-in-out; // Move button smoothly
+    transition: right 0.3s ease-in-out; //Move button smoothly
     width: 55px;
     z-index: 999;
 
     .arrow-icon {
         height: 27px;
-        transition: transform 0.3s ease-in-out 0.2s; // Add a slight delay for smooth effect
+        transition: transform 0.3s ease-in-out 0.2s; //Add a slight delay for smooth effect
         width: 40px;
     }
 
     &.moved {
-        right: 340px; // Moves left when sidebar is expanded
+        right: 340px; //Moves left when sidebar is expanded
     }
 
     .arrow-icon.rotated {
@@ -621,7 +611,7 @@ body {
 }
 
 
-// Adjust content margin when sidebar is expanded
+//Adjust content margin when sidebar is expanded
 .content {
     margin: auto;
     margin-left: 115px;

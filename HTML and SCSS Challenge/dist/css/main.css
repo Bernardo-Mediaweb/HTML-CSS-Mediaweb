@@ -367,9 +367,8 @@ body {
 }
 .employees-table tbody .accordion-content {
   background-color: #ffffff;
-  /*display: none;*/
   position: relative;
-  top: -20px; /* Pull it up to hide the gap */
+  top: -20px;
   z-index: 0;
 }
 .employees-table tbody .accordion-content td {
@@ -434,13 +433,6 @@ body {
   margin-left: 5px;
 }
 
-.placeholder-image {
-  background-color: #e0e0e0;
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-}
-
 .pagination-container {
   align-items: center;
   display: flex;
@@ -482,7 +474,6 @@ body {
   padding: 5px 10px;
 }
 
-/* Name & Profile image alignment */
 .name-container {
   align-items: center;
   display: flex;
@@ -495,7 +486,6 @@ body {
   width: 35px;
 }
 
-/* Status badge */
 .status {
   background: #EBF7ED;
   border-radius: 15px;
@@ -509,7 +499,6 @@ body {
   color: #EBF7ED;
 }
 
-/* Dropdown icon */
 .dropdown-icon {
   cursor: pointer;
   height: 10px;
@@ -520,7 +509,6 @@ body {
   opacity: 0.7;
 }
 
-/* Sidebar toggle button */
 .right-sidebar {
   background-color: #FFFFFF;
   box-sizing: border-box;
