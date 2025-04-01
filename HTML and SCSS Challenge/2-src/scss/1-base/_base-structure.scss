@@ -7,29 +7,28 @@
 
 :root {
     /* Color - Brand */
-    --primary-color: #F4FAFF;
-    --secondary-color: #7030A0;
+    --primary-color: #7030A0;
+    --secondary-color: #F4FAFF;
     --tertiary-color: #552479;
     --quaternary-color: #FFFFFF;
     --quinary-color: #E9ECEF;
     --senary-color: #343A40;
     --right-sidebar-color: #0E426F;
-    --grey-line-color: #D4E3F0;
+    --grey-line-color: #D4E3F0; 
+    
+    /*! App Settings */
+  
+    --side-menu-size:112px;
+    --space-m: 20px; 
+    }
 
-}
-
-h1 {
-    margin: 0;
-    font-weight: 500; 
-    font-size: 32px;
-    line-height: 1.5;
-}
-
-h3 {
-    color: var(--right-sidebar-color);
-    margin: 0;
-    font-weight: 700; 
-    font-size: 14px;
-    line-height: 1.5;
-}
-
+    a {
+        color: white!important;
+    }
+    
+    img {
+        margin: 0;
+        transition: width 0.3s ease;
+        max-width: fit-content;
+    }
+    

@@ -1,52 +1,40 @@
-
-
-.search-bar {
-    align-items: center;
-    background-color: var(--primary-color);
-    display: flex;
-    margin-top: 20px;
-    padding: 10px;
-
-    .search-icon {
-        height: 16px;
-        left: 15px;
-        width: 16px;
+.font-size-h1 {
+    font-weight: 500;
     }
 
-    input {
-        background-color: var(--primary-color);
-        border: none;
-        border-radius: 80px;
-        font-family: 'Raleway', sans-serif;
-        font-size: 14px;
-        line-height: 24px; 
-        outline: none;
-        padding: 10px;
-        width: 50%;
-    }
+.fa {
+    font-size: medium; }
 
-    .search-button {
-        margin-left: auto;
-    }
-
-
-    button.advanced-filters {
-        background-color: #E8F1F9;
-        border: none; 
-        border-radius: 10px; 
-        color: #4F575E;
-        cursor: pointer;
-        font-family: 'Raleway', sans-serif;
-        font-size: 14px;
-        line-height: 24px;
-        margin-left: 10px; 
-        padding: 10px 20px;
-    }
+.input-with-icon .input-with-icon-input,
+.input-with-icon .input-with-icon-input input {
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 80px;
+    width: 115%;
 }
 
-.search-hr {
+.input-with-icon .input-with-icon-content-icon,
+.input-with-icon .input-with-icon-content-icon a{
+    color: var(--primary-color);
+}
+    
+.btn-advan-filter {
+    background-color: #E8F1F9;
     border: none;
-    border-bottom: 1px solid var(--grey-line-color);
-    margin: -10px 0 0 25px;
-    width: 45%; 
+    border-radius: 10px;
+    color: #4F575E;
+    cursor: pointer;
+  }
+
+  // Remove the outline when the button is focused or hovered
+
+.form-control[data-input]:focus, .form-control[data-textarea]:focus {
+     border: 0; 
+}
+
+.form-control[data-input]:hover, .form-control[data-textarea]:hover {
+    border: 0; }
+
+.separator-horizontal {
+        margin-left: 20px;
 }

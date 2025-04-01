@@ -1,225 +1,101 @@
-
-/* $2.1 - Body */
+// $2.1 - Body
 body {
-    display: flex;
+    background: var(--secondary-color);
+    color: var(--primary-color);
     font-family: 'Raleway', sans-serif;
     font-size: 14px;
     margin: 0;
-}
+  }
+  
+  // $2.2 - Main container
 
-/* $2.2 - Main container */
-.container {
-    background-color: var(--primary-color);
-    border-radius: 51px;
-    display: flex;
-    padding: 30px;
-    transition: margin-right 0.3s ease;
-    width: 100%;
-
-    &.shifted {
-        margin-right: 360px; //Adjusts content when sidebar is open
-    }
-}
-
-/* $2.3 - Overlay effect */
-.overlay {
-    background-color: rgba(0, 0, 0, 0.5); 
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    pointer-events: none;
-    position: fixed;
-    top: 0;
-    transition: opacity 0.3s ease;
-    width: 100%;
-    z-index: 1000; 
-
-    &.active {
-        opacity: 1;
-        pointer-events: auto;
-    }
-}
-
-/* $2.4 - Navigation sidebar */
-.app-menu-content {
-    background-color: var(--secondary-color) !important;
+  
+  // $2.4 - Navigation sidebar
+  .app-menu-content {
+    background-color: var(--primary-color) !important;
     border-bottom-right-radius: 30px;
     border-top-right-radius: 30px;
-    width: var(--side-menu-size);
     transition: width 0.3s ease;
-
+    -webkit-transition: width 0.3s ease;
+    width: var(--side-menu-size);
+  
     &.expanded {
-        width: 222px;
+      width: 222px;
 
-        .menu-text {
-            margin-left: 32px;
-        }
+      .arrow-icon {
+        margin-left: 30px;
+        transform: rotate(180deg);
+      }
+  
+      .menu-text {
+        margin-left: 32px;
+      }
     }
-
+  
     .app-menu-links {
-        justify-content: center;
-        gap: 20px;
-        padding: var(--space-base) var(--space-m);
-
-        &.layout-side {
-            overflow-y: hidden !important;
-            scrollbar-width: none;
-            
-            a {
-                margin-bottom: 2rem;
-            }
-        }
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      gap: 20px;
+      justify-content: center;
+      padding: var(--space-base) var(--space-m);
     }
-
+  
     .menu-text {
-        margin-left: 50px;
-        transition: margin-left 0.3s ease;
+      margin-left: 50px;
+      transition: margin-left 0.3s ease;
+      -webkit-transition: margin-left 0.3s ease;
     }
-
+  
     .app-login-info {
-        margin-left: 20px;
+      margin-left: 20px;
     }
-}
-
-// Separate overlay styles
-.desktop {
-    .app-menu-overlay {
-        display: block;
-    }
-}
-
-// Image styles (kept global as it likely applies to all images)
-img {
-    max-width: fit-content;
-}
-
-// Menu visible state (if still needed)
-.menu-visible {
-    .app-menu-links a {
+    
+    .arrow-icon {
+        transform: rotate(0deg);
+        transition: margin-left 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+ 
+  }   
+  
+// Layout side menu links
+.layout-side {
+    .app-menu-links {
+      overflow-y: hidden !important;
+      scrollbar-width: none;
+  
+      a {
         margin-bottom: 2rem;
+      }
+      
+      a.active {
+        border-left: 0px;
+      }
     }
-}
-
-/* $2.4.1 - Menu navigation sidebar */
-.menu {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    list-style: none;
-    margin: 10px;
-    padding: 0;
-
-    .top {
-        align-items: center;
-        display: flex;
-        margin-bottom: auto;
-
-        .logo-icon {
-            margin-right: 30px; 
-        }
+  }
+  
+  // Menu visible state (if needed globally)
+  .menu-visible {
+    .app-menu-links a {
+      margin-bottom: 2rem;
     }
-    
-    .bottom {
-        margin-top: auto;
+  }
+  
+  // Login info
+  .app-login-info {
+    margin-left: 20px;
+  }
+  
+  // Desktop overlay
+  .desktop {
+    .app-menu-overlay {
+      display: block;
     }
-
-    .menu-items {
-        margin-top: -10rem; 
-
-        li {
-            margin-bottom: 2rem; 
-        }
-    }
-
-    li {
-        align-items: center; 
-        border-radius: 10px;
-        color: white;
-        cursor: pointer;
-        display: flex;
-        margin: 10px 0;
-        padding: 10px; 
-
-        &.active {
-            background-color: var(--tertiary-color);
-        }
-
-
-        &:not(.top):hover { // Only apply hover effect to the bottom menu items
-            background-color: var(--tertiary-color);
-        }
-    }
-    
-}
+  }
 
 /* $2.5 - Content */
-.content {
-    margin: auto;
-    margin-left: 115px;
-    width: 90%;
-}
+
 
 /* $2.6 - Right sidebar */
-.right-sidebar {
-    background-color: var(--quaternary-color);
-    box-sizing: border-box;
-    height: 100%;
-    overflow: auto;
-    padding: 20px;
-    position: fixed;
-    right: 0;
-    top: 0;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    width: 340px;
-    z-index: 999;
 
-    &.expanded {
-        transform: translateX(0);
-    }
-
-    &::-webkit-scrollbar {
-        background: transparent;
-        width: 0;
-    }
-
-    & > *:nth-child(-n+6) {
-        margin-bottom: 40px;
-    }
-}
 
 /* $2.6.1 - Button from right sidebar */
-.sidebar-toggle-btn {
-    align-items: center;
-    background-color: #fff;
-    border: none;
-    border-radius: 15px 0 0 15px;
-    color: #fff;
-    cursor: pointer;
-    display: flex;
-    height: 92px;
-    justify-content: center;
-    padding: 0;
-    position: fixed;
-    right: 0;
-    top: 70px;
-    transition: right 0.3s ease-in-out; //Move button smoothly
-    width: 55px;
-    z-index: 999;
-
-    .arrow-icon {
-        height: 27px;
-        transition: transform 0.3s ease-in-out 0.2s; //Add a slight delay for smooth effect
-        width: 40px;
-    }
-
-    &.moved {
-        right: 340px; //Moves left when sidebar is expanded
-    }
-
-    .arrow-icon.rotated {
-        transform: rotate(180deg);
-    }
-}

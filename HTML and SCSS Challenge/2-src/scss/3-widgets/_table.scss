@@ -1,142 +1,41 @@
-
-
-.table-container {
-    margin-top: 20px;
-    width: 100%;
+.osui-accordion .osui-accordion-item,
+.osui-accordion .list .osui-accordion-item {
+  border: 0px;
+  border-radius: 19px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
 }
 
-.employees-table {
-    border-collapse: separate;
-    border-spacing: 0 10px;
-    width: 100%;
+.osui-accordion-item__title {
+  border-radius: 19px;
+  color: var(--senary-color);
+  font-size: 14px;
+  padding: var(--space-m) var(--space-xl) var(--space-m) var(--space-xl);
+}
 
-    thead th {
-        color: var(--senary-color);
-        font-weight: 500;
-        padding: 15px;
-        text-align: left;
-    }
+.osui-accordion-item__title:focus {
+  background-color: #e9ecef !important;
+}
 
-    tbody {
-        tr {
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 1;
+.table {
+  border: 0px;
+  color: var(--senary-color);
+  font-weight: 500;
+  margin-left: 30px;
+  text-align: left;
+}
+
+.osui-accordion-item__content--is-expanded {
+  height: auto;
+  padding: var(--space-m) var(--space-m) var(--space-m);
+}
+
+.osui-accordion-item {
+  --accordion-active-border-size: 0;
+}
+
+
+.osui-accordion-item__icon {
+    color: #7030A0;
+}
     
-            //Fix an issue related the two last rows of the table
-            &:nth-last-child(-n+2) {
-                bottom: 20px;
-            }
-    
-            &:hover {
-                background-color: rgb(233, 236, 239);
-            }
-    
-            td {
-                padding: 15px;
-    
-                &:first-child {
-                    border-bottom-left-radius: 15px;
-                    border-top-left-radius: 15px;
-                }
-    
-                &:last-child {
-                    border-bottom-right-radius: 15px;
-                    border-top-right-radius: 15px;
-                    width: 50px;
-                }
-            }
-        }
-
-        .accordion-content {
-            background-color: #ffffff;
-            position: relative;
-            top: -20px; //Pull it up to hide the gap
-            z-index: 0;
-
-            td {
-                border-radius: 0 0 15px 15px !important;
-                padding: 20px !important;
-            }
-        }
-            .accordion-details {
-                display: flex;
-                gap: 10px;
-                justify-content: space-between;
-                margin-top: 10px;
-                padding: 15px 15px 0;
-
-                div:first-of-type {
-                    width: 50%; 
-                }
-
-                div:first-of-type > p:nth-of-type(-n+2) {
-                    color: #009DDE;
-                }
-                    
-                img {
-                    margin-right: 10px; 
-                    vertical-align: middle; //Aligns the image with the text baseline
-                }
-                
-            }
-
-        tr.active {
-            td:first-child {
-                border-bottom-left-radius: 0 !important;
-            }
-
-            td:last-child {
-                border-bottom-right-radius: 0 !important;
-            }
-        }
-    }
-}
-
-.name-container {
-    align-items: center;
-    display: flex;
-    gap: 10px;
-    font-weight: 500;
-}
-
-.profile-pic {
-    border-radius: 50%;
-    height: 35px;
-    width: 35px;
-}
-
-
-.status { //Status
-    background: #EBF7ED;
-    border-radius: 15px;
-    color: #2A843C;
-    display: inline-block;
-    font-size: 12px;
-    padding: 5px 10px;
-    
-
-    &.active {
-        background: #2A843C;
-        color: #EBF7ED;
-    }
-}
-
-//Dropdown
-.dropdown-icon {
-    cursor: pointer;
-    height: 10px;
-    margin-left: 10px;
-    width: 10px;
-
-    &:hover {
-        opacity: 0.7;
-    }
-}
-
-.sort-icon {
-    margin-left: 5px;
-}
