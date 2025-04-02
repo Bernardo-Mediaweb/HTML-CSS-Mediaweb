@@ -38,4 +38,16 @@
 .osui-accordion-item__icon {
     color: #7030A0;
 }
-    
+
+.osui-accordion-item--is-open {
+  .text-green-darker {
+      color: initial; // Reset original color
+      color: #EBF7ED;
+     
+  }
+  
+  .background-green-lightest {
+      background-color: initial; // Reset original background
+      background-color: #2A843C;
+  }
+}

@@ -1,0 +1,37 @@
+.popover-bottom {
+    border-radius: 16px !important;
+    transform: translateY(20%) !important;
+}
+
+.btn-advan-filter {
+    background-color: #E8F1F9;
+    border: none;
+    border-radius: 10px;
+    color: #4F575E;
+    cursor: pointer;
+    padding: 12px; }
+
+
+.form-control[data-input], .form-control[data-textarea]{
+    border: 1px solid #d0d0d0;
+    border-radius: 56px;
+    padding: 8px;
+    width: 75%;
+    font-weight: 500;
+    }
+
+    .popover-input {
+        border: 1px solid #ADB5BD;
+        border-radius: 56px;
+    }
+
+    .input-with-icon.input-with-icon-right .input-with-icon-content-icon {
+        left: auto;
+        right: 50px;
+    }
+
+    [data-popover] > .popover-bottom{
+        border: 0;
+      }
+
+

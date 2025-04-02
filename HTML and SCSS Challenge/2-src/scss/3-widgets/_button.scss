@@ -19,6 +19,18 @@
   .btn-primary-action {
     background-color: var(--primary-color);
     color: var(--quaternary-color);
-    width: 128px;
+    width: 148px;
     @extend %btn-base;
   }
+
+  .btn.popover {
+    background-color: #E8F1F9;
+    border: none;
+    border-radius: 10px;
+    color: #4F575E;
+    cursor: pointer;
+    width: 160px;
+    height: 42px;
+    font-weight: 100;
+    padding: 13px;
+}

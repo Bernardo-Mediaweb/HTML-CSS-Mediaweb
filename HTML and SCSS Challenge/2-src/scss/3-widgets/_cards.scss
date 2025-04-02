@@ -2,35 +2,35 @@
     border: 0px;
 }
 .card-data {
-	-webkit-box-align: center;
-	-ms-flex-align: center;
 	align-items: center;
 	background-color: #E8F1F9;
 	border-radius: 19px;
+	-webkit-box-align: center;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	color: #A3C9EA;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	-ms-flex-align: center;
+	-ms-flex-pack: distribute;
 	font-size: 14px;
 	height: 76px;
-	-ms-flex-pack: distribute;
 	justify-content: space-around;
 	padding: 0 20px;
 	width: 308px;
 	.card-data-item {
-		-webkit-box-align: center;
-		-ms-flex-align: center;
 		align-items: center;
+		-webkit-box-align: center;
+		-webkit-box-direction: normal;
+		-webkit-box-orient: vertical;
+		-webkit-box-pack: center;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
+		-ms-flex-align: center;
 		-ms-flex-direction: column;
 		flex-direction: column;
-		-webkit-box-pack: center;
 		-ms-flex-pack: center;
 		justify-content: center;
 		padding: 6px 20px;
@@ -48,3 +48,60 @@
 		}
 	}
 }
+
+
+.card-1 {
+	background-color: #1A79CB;
+	background-image: url("/Project_Mediaweb/img/Project_Mediaweb.medalcard.svg");
+	background-position: right;
+	background-repeat: no-repeat;
+	background-size: 175px;
+	border-radius: 16px;
+	color:white;
+	overflow: hidden;
+	position: relative;
+	width: 100%; }
+	.card-1 .card-content {
+	  -webkit-box-direction: normal;
+	  -webkit-box-orient: vertical;
+	  display: -webkit-box;
+	  display: -ms-flexbox;
+	  display: flex;
+	  -ms-flex-direction: column;
+	  flex-direction: column;
+	  gap: 12px; }
+
+	.card-separator {
+    	margin-left: -20px;
+		width: 75%;
+		opacity: 0.23;
+	}
+
+
+	.card-2 {
+		background-color: #F1F9FF;
+		background-image: url(/Project_Mediaweb/img/Project_Mediaweb.caduceuscard.svg);
+		background-position: right;
+		background-repeat: no-repeat;
+		background-size: 175px;
+		border-radius: 16px;
+		color:#0E426F; }
+
+		.card-3 {
+			background-color: #F1F9FF;
+			background-image: url(/Project_Mediaweb/img/Project_Mediaweb.shapecard.svg);
+			background-position: right;
+			background-repeat: no-repeat;
+			background-size: 175px;
+			border-radius: 16px;
+			color:#0E426F; }
+
+	
+		.card-separator {
+			margin-left: -20px;
+			width: 75%;
+			opacity: 0.23;
+		}
+	
+
+	

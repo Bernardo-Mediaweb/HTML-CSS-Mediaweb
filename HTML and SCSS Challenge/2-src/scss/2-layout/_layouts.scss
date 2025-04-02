@@ -8,7 +8,34 @@ body {
   }
   
   // $2.2 - Main container
-
+  .ThemeGrid_Container {
+    max-width: none!important;
+  }
+  .layout {
+    .main-content {
+      &.ThemeGrid_Container {
+        border-bottom-right-radius: 51px;
+        border-top-right-radius: 51px;
+        margin-right: 0;
+        transition: margin-right 0.33s ease-out, width 0.33s ease-out;
+        width: 100%;
+      }
+    }
+  }
+  body {
+    &:has(.osui-sidebar--is-open) {
+      .layout {
+        .main-content {
+          &.ThemeGrid_Container {
+            margin-right: 345px;
+            transition: margin-right 0.33s ease-out, width 0.33s ease-out;
+            width: 75%;
+          }
+        }
+      }
+    }
+  }
+  
   
   // $2.4 - Navigation sidebar
   .app-menu-content {
@@ -29,17 +56,26 @@ body {
   
       .menu-text {
         margin-left: 32px;
+        font-weight: 500;
+  
       }
     }
   
     .app-menu-links {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
-      gap: 20px;
       justify-content: center;
-      padding: var(--space-base) var(--space-m);
+      padding: var(--space-base) var(--space-base);
+      img {
+        &:hover {
+          background: #552479;
+        }
+        padding: 10px;
+        border-radius: 11px;
+      }
     }
-  
+
+
     .menu-text {
       margin-left: 50px;
       transition: margin-left 0.3s ease;
@@ -48,6 +84,13 @@ body {
   
     .app-login-info {
       margin-left: 20px;
+      img {
+        &:hover {
+          background: #552479;
+        }
+        padding: 10px;
+        border-radius: 11px;
+      }
     }
     
     .arrow-icon {
@@ -56,6 +99,45 @@ body {
         }
  
   }   
+
+  .osui-sidebar {
+    box-shadow: var(--shadow-none);
+    z-index: var(--layer-global-screen);}
+
+
+  .sidebar-toggle-btn {
+    align-items: center;
+    background-color: var(--quaternary-color);
+    border: none;
+    border-radius: 35px 0 0 35px;
+    color: var(--quaternary-color);
+    cursor: pointer;
+    display: flex;
+    height: 92px;
+    justify-content: center;
+    padding: 0;
+    position: absolute;
+    right: -39px;
+    top: -75px;
+    transition: right 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    width: 55px;
+    z-index: var(--layer-global-screen);
+    
+    .fa {
+        color: var(--primary-color);
+        font-size: 2rem;
+        height: 25px;
+        transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    
+    // Open state styles using the correct class
+    body:has(.osui-sidebar--is-open) & {  
+        .fa {
+            transform: rotate(180deg);
+        }
+    }
+}
+  
   
 // Layout side menu links
 .layout-side {
