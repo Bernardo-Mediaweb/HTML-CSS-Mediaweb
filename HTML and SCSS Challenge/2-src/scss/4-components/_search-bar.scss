@@ -5,7 +5,8 @@
 .fa {
     font-size: medium; }
 
-.input-with-icon .input-with-icon-input,
+.input-with-icon 
+ .input-with-icon-input,
 .input-with-icon .input-with-icon-input input {
     background-color: var(--secondary-color);
     border: none;
@@ -17,7 +18,14 @@
 .input-with-icon .input-with-icon-content-icon a{
     color: var(--primary-color);
 }
-    
+
+.search-bar {
+	.input-with-icon {
+		border-bottom: 1px solid var(--color-neutral-4);
+	}
+}
+
+
 .btn-advan-filter {
     background-color: #E8F1F9;
     border: none;
@@ -34,7 +42,3 @@
 
 .form-control[data-input]:hover, .form-control[data-textarea]:hover {
     border: 0; }
-
-.separator-horizontal {
-        margin-left: 20px;
-}

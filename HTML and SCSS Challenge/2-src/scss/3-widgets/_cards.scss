@@ -73,8 +73,8 @@
 
 	.card-separator {
     	margin-left: -20px;
-		width: 75%;
 		opacity: 0.23;
+		width: 75%;
 	}
 
 
@@ -99,9 +99,36 @@
 	
 		.card-separator {
 			margin-left: -20px;
-			width: 75%;
 			opacity: 0.23;
+			width: 75%;
 		}
 	
 
+	.match-info {
+		border-bottom: 1px solid var(--color-neutral-4);
+	}
 	
+	.profile-container {
+		align-items: center;
+		display: flex;
+	
+		img, .extra {
+			border: 2px solid white;
+			border-radius: 50%;
+			margin-left: -10px; // Overlapping effect
+			object-fit: cover;
+			width: 40px;
+		}
+	
+		.extra {
+			align-items: center;
+			background-color: #1565C0;
+			color: white;
+			display: flex;
+			font-size: 14px;
+			font-weight: bold;
+			height: 32px;
+    		width: 32px;
+			justify-content: center;
+		}
+	}
